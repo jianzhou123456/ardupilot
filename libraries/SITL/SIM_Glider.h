@@ -58,73 +58,48 @@ protected:
      */
     const struct Model {
         // total vehicle mass
-        float mass = 9.07441; // kg
+        float mass = 130; // kg
 
         // reference area
-        float Sref = 0.92762; // m^2
+        float Sref = 28.0224; // m^2
 
-        float refSpan = 1.827411; // m
-        float refChord = 0.507614; // m
-        float IXX = 0.234; // kg-m^2
-        float IYY = 1.85; // kg-m^2
-        float IZZ = 2.04; // kg-m^2
+        float refSpan = 10.08; // m  机翼展长
+        float refChord = 2.78; // m 机翼弦长
+        float IXX = 236.3; // kg-m^2
+        float IYY = 247; // kg-m^2
+        float IZZ = 73.85; // kg-m^2
 
         // CN is coefficients for forces on +Z axis
         // quadratic in alpharad
-        float CN2 = -0.5771;
-        float CN1 = 3.9496;
-        float CN0 = 0;
+        float CY_beta = -0.00407;
 
         // CA is the coefficients for forces on +X axis
         // quadratic in alpharad
-        float CA2 = -1.6809;
-        float CA1 = -0.0057;
-        float CA0 = 0.0150;
+        float CD_alpha = 0.0105;
+        float CD0 = 0.0669;
 
         // CY is the coefficients for forces on the +Y axis
         // quadratic in alpharad, with betarad factor
-        float CY2 = -3.342;
-        float CY1 = 0.0227;
-        float CY0 = -0.4608;
+        float CL_alpha = 0.0592;
+        float CL0 = 0.2694;
 
         // Cl is the coefficients for moments on X axis
         // quadratic in alpharad, with betarad factor
-        float Cl2 = 0.2888;
-        float Cl1 = -0.8518;
-        float Cl0 = -0.0491;
+
+        float Cl_beta = -0.00115;
 
         // Cm is the coefficients for moments on Y axis
         // quadratic in alpharad
-        float Cm2 = 0.099;
-        float Cm1 = -0.6506;
-        float Cm0 = -0.0005;
+        float Cm_alpha = -0.0224;
+        float Cm0 = 0.2167;
 
         // Cn is the coefficients for moments on Z axis
         // quadratic in alpharad, with betarad factor
-        float Cn2 = 0.0057;
-        float Cn1 = -0.0101;
-        float Cn0 = 0.1744;
+        float Cn_beta = 0.00065;
 
         // controls neutral dynamic derivatives
         // p, q, r are gyro rates
-        float Cmq = -6.1866;
-
-        float Clp2 = 0.156;
-        float Clp1 = 0.0129;
-        float Clp0 = -0.315;
-
-        float Clr2 = -0.0284;
-        float Clr1 = 0.2641;
-        float Clr0 = 0.0343;
-
-        float Cnp2 = 0.0199;
-        float Cnp1 = -0.315;
-        float Cnp0 = -0.013;
-
-        float Cnr2 = 0.1297;
-        float Cnr1 = 0.0343;
-        float Cnr0 = -0.264;
-
+        
         // elevator
         float elevatorDeflectionLimitDeg = -12.5;
         float deltaCNperRadianElev = -0.7;
